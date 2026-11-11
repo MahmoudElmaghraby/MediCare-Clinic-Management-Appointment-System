@@ -24,4 +24,9 @@ public static class DependencyInjection
 
         return services;
     }
+
+    public static async Task SeedMediCareAsync(this IServiceProvider services)
+    {
+        await RoleSeeder.SeedRolesAsync(services);
+    }
 }
