@@ -1,13 +1,12 @@
 using MediCare.Data.Entities;
+
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MediCare.Data;
 
-/// <summary>
-/// EF Core entry point. Identity tables are not mapped yet.
-/// When that task starts, this class can inherit IdentityDbContext.
-/// </summary>
-public class ApplicationDbContext : DbContext
+/// EF Core entry point with Identity tables.
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
@@ -18,6 +17,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
     }
 }
