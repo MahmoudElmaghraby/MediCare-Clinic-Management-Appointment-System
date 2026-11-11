@@ -10,7 +10,7 @@ namespace MediCare.Data;
 public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
 {
     public const string DesignTimeConnectionString =
-        "Server=localhost;Database=MediCare;Trusted_Connection=True;TrustServerCertificate=True";
+        "Server=(localdb)\\MSSQLLocalDB;Database=MediCare;Trusted_Connection=True;TrustServerCertificate=True";
 
     public ApplicationDbContext CreateDbContext(string[] args)
     {
