@@ -7,7 +7,7 @@ public class RegisterViewModel
     [StringLength(100, MinimumLength = 3)]
     [Display(Name = "Full name")]
     [Required]
-    public string FullName {get; set;} = string.Empty;
+    public string FullName { get; set; } = string.Empty;
 
     [Required]
     [EmailAddress]
@@ -21,6 +21,7 @@ public class RegisterViewModel
     [Required]
     [DataType(DataType.Password)]
     [Compare("Password")]
+    [Display(Name = "Confirm password")]
     public string ConfirmPassword { get; set; } = string.Empty;
 
     [Required]
