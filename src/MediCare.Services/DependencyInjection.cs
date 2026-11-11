@@ -21,6 +21,7 @@ public static class DependencyInjection
 
         services.AddSingleton<SpecializationFactory>();
         services.AddScoped<ISpecializationService, SpecializationService>();
+        services.AddScoped<IAccountService, AccountService>();
 
         return services;
     }
